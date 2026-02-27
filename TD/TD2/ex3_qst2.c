@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <time.h>
 
 void swap(int *a, int *b) {
 	int tmp = *a;
@@ -29,7 +28,7 @@ int main() {
 	for (int i = 0 ; i < 50 ; i++) {
 		printf("=");
 		fflush(stdout);
-		usleep(100000);
+		nanosleep(&(struct timespec){0, 100000000}, NULL);
 	}
 	printf(">] swap !\n\n");
 	
